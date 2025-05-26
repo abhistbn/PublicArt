@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PublicArt</title>
+        <link rel="stylesheet" href="css/homepage.css" />
+        <script src="js/homepage.js"></script>
+    </head>
+    <body>
+        <!-- Floating Navigation -->
+        <nav class="nav-container">
+            <div class="nav-content">
+                <a href="/" class="logo">PublicArt</a>
+                <ul class="nav-menu">
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="#artikel">Artikel</a></li>
+                    <li><a href="#kategori">Kategori</a></li>
+                    <li><a href="#tentang">Tentang</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">Portal Content Terdepan</div>
+                <h1>Discover Stories<br />That Matter</h1>
+                <p class="hero-subtitle">
+                    Temukan artikel berkualitas, insights mendalam, dan
+                    perspektif terbaru setiap hari
+                </p>
+
+                <div class="search-container">
+                    <div class="search-wrapper">
+                        <input
+                            type="text"
+                            class="search-input"
+                            placeholder="Cari artikel, topik, atau kategori..."
+                            id="searchInput"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator"></div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content" id="artikel">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Latest Articles</h2>
+                <p class="section-subtitle">
+                    Artikel terbaru dan terpopuler untuk Anda
+                </p>
+            </div>
+
+            <!-- Categories -->
+            <div class="categories fade-in" id="categories">
+                <button class="category-btn active" data-category="all">
+                    Semua
+                </button>
+                <!-- Categories will be loaded dynamically -->
+            </div>
+
+            <!-- Articles -->
+            <div class="articles-grid fade-in" id="articlesGrid">
+                <!-- Loading state -->
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Memuat artikel terbaru...</p>
+                </div>
+            </div>
+
+            <!-- Error state -->
+            <div class="error" id="error" style="display: none">
+                <h3>Oops! Terjadi Kesalahan</h3>
+                <p>
+                    Gagal memuat artikel. Silakan refresh halaman atau coba lagi
+                    nanti.
+                </p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>
+                    &copy; 2025 PublicArt - Modern Content Portal. Crafted with
+                    passion.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
