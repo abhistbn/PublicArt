@@ -24,7 +24,6 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <div class="hero-badge">Portal Content Terdepan</div>
                 <h1>Discover Stories<br />That Matter</h1>
                 <p class="hero-subtitle">
                     Temukan artikel berkualitas, insights mendalam, dan
@@ -39,10 +38,12 @@
                             placeholder="Cari artikel, topik, atau kategori..."
                             id="searchInput"
                         />
+                        <button class="search-btn" id="searchBtn">
+                            <span>Cari</span>
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator"></div>
         </section>
 
         <!-- Main Content -->
@@ -59,25 +60,34 @@
                 <button class="category-btn active" data-category="all">
                     Semua
                 </button>
-                <!-- Categories will be loaded dynamically -->
             </div>
 
-            <!-- Articles -->
-            <div class="articles-grid fade-in" id="articlesGrid">
-                <!-- Loading state -->
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>Memuat artikel terbaru...</p>
+            <!-- Articles Preview -->
+            <div class="articles-preview">
+                <div class="articles-grid fade-in" id="articlesGrid">
+                    <!-- Articles will be loaded here -->
+                </div>
+
+                <div class="show-more-container" style="display: none;">
+                    <button class="show-more-btn" id="showMoreBtn">
+                        Lihat Semua Artikel
+                    </button>
                 </div>
             </div>
 
-            <!-- Error state -->
-            <div class="error" id="error" style="display: none">
-                <h3>Oops! Terjadi Kesalahan</h3>
-                <p>
-                    Gagal memuat artikel. Silakan refresh halaman atau coba lagi
-                    nanti.
-                </p>
+            <!-- Article Modal -->
+            <div id="articleModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="modalTitle">Judul Artikel</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div id="modalContent">
+                            <!-- Article content will be loaded here -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
