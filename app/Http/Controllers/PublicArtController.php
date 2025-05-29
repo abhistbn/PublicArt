@@ -72,11 +72,13 @@ class PublicArtController extends Controller
      */
     public function home(Request $request)
     {
+        
         $searchQuery = $request->input('search', '');
         $categorySlugFilter = $request->input('category', 'all'); // Menerima slug kategori dari URL
 
         // 1. Ambil Kategori Aktif dari ApiArt
         $categoriesResponse = $this->fetchFromApiArt('/public/categories');
+        dd('RESPONS KATEGORI:', $categoriesResponse);
         $categories = ($categoriesResponse['success'] && isset($categoriesResponse['data'])) ? $categoriesResponse['data'] : [];
 
         // 2. Siapkan parameter untuk mengambil Artikel dari ApiArt
