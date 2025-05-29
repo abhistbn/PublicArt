@@ -680,3 +680,51 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ... CSS Anda yang sudah ada ... */
+
+.modal-article-category,
+.modal-article-date,
+.modal-article-author {
+    display: block; /* Atau inline-block dengan margin */
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+.modal-article-category strong,
+.modal-article-date strong,
+.modal-article-author strong {
+    color: var(--primary);
+}
+
+/* Styling untuk konten artikel di dalam modal */
+.article-full-content h1,
+.article-full-content h2,
+.article-full-content h3,
+.article-full-content h4 {
+    color: var(--primary);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+.article-full-content p {
+    line-height: 1.7;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+.article-full-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1em 0;
+}
+.article-full-content ul,
+.article-full-content ol {
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+.article-full-content blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: 15px;
+    margin: 1em 0;
+    font-style: italic;
+    color: var(--secondary);
+}

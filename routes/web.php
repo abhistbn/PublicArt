@@ -13,24 +13,19 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('/', 'PublicArtController@home');
 
-// homepage
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+// Rute untuk filter kategori dan pencarian akan ditangani oleh controller home dengan query string
+// Contoh: /?category=teknologi&search=AI
+// Atau jika ingin path yang lebih cantik untuk kategori:
+$router->get('/kategori/{category_slug}', 'PublicArtController@home');
 
-$router->group(['prefix' => 'api'], function () use ($router) {
-    // Articles routes
-    $router->get('articles', 'ArticleController@index');
-    $router->get('articles/{id}', 'ArticleController@show');
-    $router->post('articles', 'ArticleController@store');
-    $router->put('articles/{id}', 'ArticleController@update');
-    $router->delete('articles/{id}', 'ArticleController@destroy');
-    
-    // Categories routes
-    $router->get('categories', 'CategoryController@index');
-    $router->post('categories', 'CategoryController@store');
+
+// Endpoint internal untuk JavaScript mengambil detail artikel untuk modal
+$router->get('/api/internal/article-detail/{id}', 'PublicArtController@getArticleDetailForModal');
+
+// Rute untuk halaman statis jika ada (misal tentang)
+$router->get('/tentang', function () {
+    // return view('about'); // Jika ada view 'about.blade.php'
+    return "Halaman Tentang PublicArt (Belum Dibuat)";
 });
